@@ -10,9 +10,9 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-IO.puts("seeding data")
-
 File.stream!("priv/repo/covid_19_data.csv")
 |> CSV.decode!(headers: true)
 |> Enum.map(&Covid19.ImportHelper.cast/1)
-|> IO.inspect()
+|> Enum.each(fn record ->
+  Covid19.Repo.insert!(struct!(%Covid19.CovidObservation{}, record))
+end)
