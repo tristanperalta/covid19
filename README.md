@@ -1,7 +1,19 @@
 # Covid19
 
+## Requirements
+
+- Elixir
+- Nodejs
+    
+## Setup
+
+To install Elixir, follow this [guide](https://elixir-lang.org/install.html)
+
+Download and install nodejs from [here](https://nodejs.org/en/download/)
+
 To start your Phoenix server:
 
+  * Go into project directory. `cd covid19`
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
   * Install Node.js dependencies with `npm install` inside the `assets` directory
